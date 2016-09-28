@@ -1,0 +1,30 @@
+#%Module1.0#####################################################################
+##
+## cude-8.0 modulefile
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tThis module will set up environment variables"
+	puts stderr "\tsuitable for cuda 8.0"
+	puts stderr "\tcuda is expected to be installed in /opt/cuda-8.0"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"set environment variables suitable for cuda 8.0"
+
+conflict cuda
+
+set cuda_home    /opt/cuda-8.0/
+set cuda_include $cuda_home/targets/x86_64-linux/include/
+set cuda_ld      $cuda_home/targets/x86_64-linux/lib/:$cuda_home/lib64/
+
+setenv CUDA_HOME    $cuda_home
+setenv CUDA_INCLUDE $cuda_include
+setenv CUDA_LD      $cuda_ld
+
+prepend-path PATH               $cuda_home/bin/
+prepend-path LD_LIBRARY_PATH    $cuda_home/lib64/
+prepend-path CPLUS_INCLUDE_PATH $cuda_include
+prepend-path C_INCLUDE_PATH     $cuda_include
+prepend-path LD_LIBRARY_PATH    $cuda_ld
