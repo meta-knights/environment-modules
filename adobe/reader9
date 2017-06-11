@@ -1,0 +1,16 @@
+#%Module1.0#####################################################################
+##
+## adobe reader 9 modulefile
+##
+proc ModulesHelp { } {
+	global version
+
+	puts stderr "\tThis module will set up environment variables"
+	puts stderr "\tsuitable for adobe reader 9"
+	puts stderr "\tacroread is expected to be installed in /opt/Adobe/Reader9/bin"
+	puts stderr "\n\tVersion $version\n"
+}
+
+module-whatis	"set environment variables suitable for adobe reader 9"
+
+prepend-path PATH               /opt/Adobe/Reader9/bin/
