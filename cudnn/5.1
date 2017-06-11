@@ -1,0 +1,19 @@
+#%Module1.0#####################################################################
+##
+## modules cuDNN
+##
+## modulefiles/cuDNN
+##
+proc ModulesHelp { } {
+        global version modroot
+
+        puts stderr "cuDNN-5.1"
+}
+
+module-whatis   "cuDNN-5.1"
+
+conflict cudnn
+
+# for Tcl script use only
+prepend-path    LD_LIBRARY_PATH /opt/cudnn-5.1/lib64
+
