@@ -1,21 +1,21 @@
 #%Module1.0#####################################################################
 ##
-## cuda-8.0 modulefile
+## cuda-9.0 modulefile
 ##
 proc ModulesHelp { } {
 	global version
 
 	puts stderr "\tThis module will set up environment variables"
-	puts stderr "\tsuitable for cuda 8.0"
-	puts stderr "\tcuda is expected to be installed in /usr/local/cuda-8.0"
+	puts stderr "\tsuitable for cuda 9.0"
+	puts stderr "\tcuda is expected to be installed in /usr/local/cuda-9.0"
 	puts stderr "\n\tVersion $version\n"
 }
 
-module-whatis	"set environment variables suitable for cuda 8.0"
+module-whatis	"set environment variables suitable for cuda 9.0"
 
 conflict cuda
 
-set cuda_home    /usr/local/cuda-8.0/
+set cuda_home    /usr/local/cuda-9.0/
 set cuda_include $cuda_home/targets/x86_64-linux/include/
 set cuda_ld      $cuda_home/targets/x86_64-linux/lib/:$cuda_home/lib64/
 
